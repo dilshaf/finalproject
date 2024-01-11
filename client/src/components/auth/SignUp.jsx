@@ -333,6 +333,11 @@ import { useNavigate } from "react-router-dom";
 import { errorToast, successToast } from "../../Toastify/Toast";
 import axios from "axios";
 
+import Home from '../../containers/Home/Home'
+// import jwt_decode from 'jwt-decode';
+
+
+
 export default function Example() {
   const [formData, setFormData] = useState({
     username: "",
@@ -341,7 +346,7 @@ export default function Example() {
     image: "",
     privacy: "public",
   });
-
+  //  const[user,setUser]=useState({})
   const [usernameError, setUsernameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
@@ -354,7 +359,21 @@ export default function Example() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleCallbackResponse=(response)=>{
+    console.log("encoded jwt id token"+response.credential);
+    navigate("/home");
+    // var userObject=jwt_decode(response.credential)
+    // console.log(userObject);
+  }
   useEffect(() => {
+    // google.accounts.id.initialize({
+    //   client_id:"641492278554-ncvvu41ondhs1csaitff63u5jtueqsee.apps.googleusercontent.com",
+    //   callback:handleCallbackResponse
+    // })
+    // google.accounts.id.renderButton(
+    //   document.getElementById("signInDiv"),
+    //   {theme:"outline",size:"large"}
+    // )
     if (formData.username) {
             if (!formData.username.match(/^[a-zA-Z\s]+$/)) {
               setUsernameError('Invalid username');
@@ -394,8 +413,16 @@ export default function Example() {
               setFileError('');
             }
           }
+
           
   }, [formData]);
+  useEffect(() => {
+    google.accounts.id.initialize({
+      client_id: "641492278554-ncvvu41ondhs1csaitff63u5jtueqsee.apps.googleusercontent.com",
+      callback: handleCallbackResponse,
+    });
+    google.accounts.id.renderButton(document.getElementById("signInDiv"), { theme: "outline", size: "large" });
+  }, []);
 
   const handleImageChange = (e) => {
     setFormData({ ...formData, image: e.target.files[0] });
@@ -418,7 +445,7 @@ export default function Example() {
       );
 
       if (response.data) {
-        navigate("/");
+        navigate("/otp");
         successToast("Registration Sucessfully");
       }
     } catch (error) {
@@ -431,11 +458,15 @@ export default function Example() {
   };
 
   return (
+<>
+
+    <div id="signInDiv"></div>
     <div className="flex min-h-screen justify-center items-center bg-cover bg-center bg-no-repeat">
       <div className="bg-white p-8 rounded-md shadow-lg w-full md:w-96">
         <h2 className="text-2xl font-bold mb-4 text-center text-purple-800">
           Register Now
         </h2>
+
 
         <form onSubmit={handleSubmitData} className="space-y-4">
           {/* ... other form fields ... */}
@@ -537,7 +568,9 @@ export default function Example() {
             </button>
           </div>
         </form>
+
       </div>
     </div>
+    </>
   );
 }

@@ -289,6 +289,11 @@ import { Link } from 'react-router-dom';
 import './Header.css'
 
 function NavScrollExample() {
+
+  const logout=()=>{
+    localStorage.clear()
+    window.location.reload()
+  }
   return (
     <Navbar expand="lg" className=" navbars" style={{height: "6rem"}}  >
       <Container fluid>
@@ -310,7 +315,7 @@ function NavScrollExample() {
           </Nav>
           <Form className="d-flex">
           {/* <Link   to={'/'}><Button variant="outline-success">Sign Out</Button></Link> */}
-          <Link   to={'/'}><button class="bn632-hover bn20">SignOut</button></Link>
+          <Link   to={'/'}><button class="bn632-hover bn20"  onClick={logout}>SignOut</button></Link>
           <Link   to={'settings'}><button class="bn632-hover bn20">Settings</button></Link>
             {/* <Link   to={'settings'}><Button variant="outline-success">Settings</Button></Link> */}
           </Form>

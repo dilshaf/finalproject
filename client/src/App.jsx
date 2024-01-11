@@ -14,7 +14,8 @@ import AllPost from "./components/profile/AllPost";
 import Share from "./components/profile/Share";
 import Videocall from "./components/profile/Videocall";
 import AudioChat from "./components/profile/AudioChat";
-import Message from "./components/profile/Message";
+// import Message from "./components/profile/Message";
+import Otp from "./components/profile/Otp";
 
 const App = () => {
   const[details,setDetails]=useState([])
@@ -25,6 +26,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<SignIn />} />
         <Route path="/share/:id" element={<Share/>}/>
+        <Route  path="/otp" element={<Otp/>} />
         <Route path="/register" element={<SignUp />} />
 
         <Route path="/home" element={<Home />}>
@@ -45,7 +47,7 @@ const App = () => {
           <Route index path="allpost" element={<AllPost details={details}/>} />
           <Route  path="vdocall" element={<Videocall/>} />
           <Route  path="audio" element={<AudioChat/>} />
-          <Route  path="message" element={<Message/>} />
+          {/* <Route  path="message" element={<Message/>} /> */}
          
 
         </Route>
