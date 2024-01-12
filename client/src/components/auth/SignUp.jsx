@@ -351,7 +351,7 @@ export default function Example() {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [fileError, setFileError] = useState("");
-
+ 
   const [isToggled, setToggled] = useState(false);
   const navigate = useNavigate();
 
@@ -457,11 +457,14 @@ export default function Example() {
     setToggled(!isToggled);
   };
 
+  
+
+  
   return (
 <>
 
     <div id="signInDiv"></div>
-    <div className="flex min-h-screen justify-center items-center bg-cover bg-center bg-no-repeat">
+    <div className="flex min-h-screen justify-center items-center bg-center bg-no-repeat">
       <div className="bg-white p-8 rounded-md shadow-lg w-full md:w-96">
         <h2 className="text-2xl font-bold mb-4 text-center text-purple-800">
           Register Now

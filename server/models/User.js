@@ -22,7 +22,7 @@ const reglogSchema = new Schema({
     },
     image:{
         type:String,
-        required:true
+        // required:true
     },
     friends:{
         type:Array,
@@ -32,6 +32,11 @@ const reglogSchema = new Schema({
         type: Boolean,
         default: true, 
     },
+    verified: {
+        type: Boolean,
+        default: false,
+        required: true
+    }
 
 
     
