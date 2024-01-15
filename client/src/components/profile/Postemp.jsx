@@ -8,7 +8,7 @@ import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import SendIcon from '@mui/icons-material/Send';
 import { WhatsappShareButton } from 'react-share';
 import { AuthContext } from '../../context/AuthContext';
-
+import {format} from 'timeago.js'
 
 const UserPost = ({refresh}) => {
   const [showComments, setShowComments] = useState(false);
@@ -157,7 +157,7 @@ console.log(data,"llllllllllllllllllllllllllllll");
           
           <div>
             <h2 className="text-lg font-semibold">{details.username}</h2>
-            <p className="text-gray-600">Posted by fffff on December 8, 2023</p>
+            <p className="text-gray-600">{format(details.createdAt)}</p>
           </div>
           
 
@@ -172,8 +172,8 @@ console.log(data,"llllllllllllllllllllllllllllll");
         value={privacy}
         onChange={handlePrivacyChange}
         onClick={()=>handleUpdatePost(items._id)}
-        style={{marginLeft: "9rem",
-          backgroundColor: "dodgerblue"}}
+        style={{marginLeft: "20rem",
+          backgroundColor: "darkslategray",color:"burlywood"}}
       >
         <option value="public">Public</option>
         <option value="private">Private</option>

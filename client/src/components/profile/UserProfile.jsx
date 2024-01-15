@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn } from 'mdb-react-ui-kit';
-import Searchsession from './Searchsession';
+
 import FriendsList from './FriendsList';
 import axios from 'axios'
 import { getUserById } from '../../services/apiService';
@@ -16,9 +16,9 @@ export default function Basic() {
  
 
   const {obj} = useContext(AuthContext)
-  // const {refreshUseEffectMethod}=useContext(AuthContext)
+
   const [datas,setDatas]=useState([])
-  // console.log(refresh,'datas refresh');
+
 
   const { selectedPost } = useContext(AuthContext);
 
@@ -48,7 +48,7 @@ export default function Basic() {
     
       try {
         response = await getUserById();
-        // refreshUseEffectMethod()
+    
       } catch (error) {
         console.log(error.message);
       }
@@ -70,7 +70,7 @@ console.log(data,'postlength');
   
   return (
     <>
-    <div className="vh-100"   >
+    <div className="vh-100"  id='profiles' >
     
       
        
@@ -93,30 +93,27 @@ console.log(data,'postlength');
 			<div class="name">{data.username}</div>
 			<div class="job">{data.email}</div>
 
-      {/* <div class="actions">
-				
-				<button class="btn">videocall</button>
-			</div> */}
+    
 			
 			<div class="actions">
-     <Link to={"vdocall"}><button class="btn">videocall</button></Link> 
+     
 				<Link to={'message'}><button class="btn">Message</button></Link>
-       <Link to={"audio"}><button class="btn">AudioChat</button></Link> 
+     
 			</div>
 		</div>
 		
 		<div class="stats">
 			<div class="box">
-			<p className="value">{datas?.length}</p>
-				<span class="parameter">Posts</span>
+			<p className="value" style={{color:"bisque"}}>{datas?.length}</p>
+				<span class="parameter" style={{marginTop:"-1rem"}}>Posts</span>
 			</div>
 			<div class="box">
-				<span class="value">1387</span>
-				<span class="parameter">Likes</span>
+				{/* <span class="value">1387</span>
+				<span class="parameter" >Likes</span> */}
 			</div>
 			<div class="box">
-      {selectedPost ? <p className="value">{data.friends?.length}</p> : <p className="value">{data.followers?.length}</p>}
-				<span class="parameter">Follower</span>
+      {selectedPost ? <p className="value">{data.friends?.length}</p> : <p className="value" style={{color:"bisque"}}>{data.followers?.length}</p>}
+				<span class="parameter" style={{marginTop:"-1rem"}}>Follower</span>
 			</div>
 		</div>
   </div>
@@ -144,7 +141,7 @@ console.log(data,'postlength');
     </div>
     
      <div style={{    marginTop:" 26rem",
-    marginLeft: "-2rem"}} className='frnds'>
+    marginLeft: "-1rem"}} className='frnds'>
      <FriendsList followers={data.followers}/>
    </div>
    </>

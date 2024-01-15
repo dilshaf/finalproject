@@ -28,7 +28,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<SignIn />} />
         <Route path="/share/:id" element={<Share/>}/>
-
+        <Route  path="/vdocall" element={<Videocall/>} />
+        <Route  path="/message" element={<Message/>} />
 
         <Route path="/otp" element={<Otp />} />
 
@@ -51,9 +52,9 @@ const App = () => {
 
           <Route path="posts" element={<Posts />} />
           <Route index path="allpost" element={<AllPost details={details}/>} />
-          <Route  path="vdocall" element={<Videocall/>} />
+        
           <Route  path="audio" element={<AudioChat/>} />
-          <Route  path="message" element={<Message/>} />
+
          
 
         </Route>

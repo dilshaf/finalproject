@@ -1,6 +1,6 @@
 .leaderboard {
-    max-width: 490px;
-    width: 100%;
+    // max-width: 490px;
+    // width: 100%;
     border-radius: 12px;
     
     header {
@@ -113,36 +113,18 @@
   
   // bare minimuu styles
   
-  body {
-    margin: 0;
-    background-color: #eaeaea;
-    display: grid;
-    height: 100vh;
-    place-items: center;
-    font-family: 'Source Sans Pro', sans-serif;
-  }
   
   .leaderboard {
     box-shadow: 0 0 40px -10px rgba(0, 0, 0, .4);
   }
-  @media (max-width: 990px) {
-    .frnd {
-      margin-left: 15rem;
-      margin-top: -18rem;
-    }
-    .frnds{
-      margin-top: 6rem;
-      margin-left: 14rem; 
-    }
-    
-  }
 
-  @media (max-width: 574px) {
-    
-    .frnd{
-      margin-left: 13rem; 
-    }
-    
-  }
 
+@media screen and (min-width: 419px) {
   
+  .frnds {
+    margin-top: 10rem;
+    margin-left: 27rem;
+  }
+}
+
+

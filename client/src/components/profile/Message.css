@@ -52,7 +52,7 @@
     background: #6649b8;
   }
   
-  form {
+  .forms {
     height: 10vh;
     position: fixed;
     bottom: 0;
@@ -63,13 +63,13 @@
     font-size: 1.5rem;
   }
   
-  form button {
+  .forms button {
     width: 20%;
     background-color: rgb(56, 56, 143);
   }
   
   
-  input {
+  /* .inputs {
     line-height: 1.5;
     width: 100%;
     font-size: 1.5rem;
@@ -78,8 +78,8 @@
     outline: none;
     border: none;
     padding: 0 10px;
-  }
-  
+  } */
+
   button {
     background-color: #282c34; /* Green */
     border: none;

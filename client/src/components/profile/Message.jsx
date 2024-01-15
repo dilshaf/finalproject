@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-// import './Message.css';
+import './Message.css';
 import auth from '../auth/config'
 import {firestore} from '../auth/config'
 import firebase from 'firebase/compat/app';
@@ -35,7 +35,7 @@ function SignIn() {
   return (
     <>
       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Do not violate the community guidelines or you will be banned for life!</p>
+      {/* <p>Do not violate the community guidelines or you will be banned for life!</p> */}
     </>
   )
 
@@ -83,9 +83,9 @@ function ChatRoom() {
 
     </main>
 
-    <form onSubmit={sendMessage}>
+    <form onSubmit={sendMessage} className='forms p-1'>
 
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
+      <input className='rounded w-full p-3' value={formValue}  onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
 
       <button type="submit" disabled={!formValue}>
 

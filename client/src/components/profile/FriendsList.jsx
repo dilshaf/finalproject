@@ -17,12 +17,7 @@ useEffect(() => {
 }, [refreshUseEffectMethod]);
   return (
     <div
-      // style={{
-      //   marginLeft: "5rem",
-      //   marginTop: "4rem",
-      //   display: "grid",
-      //   gridRowGap: "10px",
-      // }}
+     
     className="frnd"> 
       {selectedPost ? null :""}
     

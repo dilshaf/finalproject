@@ -1,6 +1,6 @@
 import React,{useState,useEffect, useRef, useContext} from "react";
 import "./Search.css";
-import PostSession from "./PostSession";
+
 import Postemp from "./Postemp";
 import Button from 'react-bootstrap/Button';
 import axios from "axios";
@@ -40,29 +40,7 @@ const Search = () => {
     }
   };
 
-  // const handleSubmitData = async (e) => {
-  //   e.preventDefault();
-  //   console.log('FormData:',formData);
-  
-   
-  //   const data = new FormData();
-  //   data.append("description", formData.description);
-  //   data.append("image", formData.image);
-  //   data.append("userId",localStorage.getItem("id"))
 
-  //   console.log(formData,'dataaaaaaaaaaaa');
-  //   try {
-  //     const response = await axios.post("http://localhost:5000/api/posts/search",data );
-
-  //     console.log(response, "responsekkijsjbj");
-  //     if (response.data) {
-  //       successToast("success");
-  //     }
-  //   } catch (error) {
-  //     console.log(error.response.data.message);
-  //     errorToast(error.response.data.message);
-  //   }
-  // };
 
 
 
@@ -147,12 +125,7 @@ const Search = () => {
             alt="User Avatar"
           />
           <div className="post-user-info">
-            {/* <input
-              type="text"
-              value={formData.description}
-              onChange={handleInputChange}
-              placeholder="Post here..."
-            /> */}
+           
              <input
                     name="description"
                     type="text"
@@ -162,12 +135,6 @@ const Search = () => {
                     onChange={handleInputChange}
                   />
 
-            {/* <label
-              htmlFor="pic"
-              className="block text-sm font-medium leading-6 text-gray-900"
-            >
-              Photo upload
-            </label> */}
             <div className="mt-2">
               
               <input
@@ -185,22 +152,12 @@ const Search = () => {
               />
             </div>
 
-{/* <div>
 
-            <input
-  name="privacy"
-  type="text"
-  required
-  className="block w-full rounded-md border-2 border-gray-300 py-2 px-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-  // value={formData.privacy}
-  onChange={handleInputChange}
-  placeholder="You can choose post is private or public"
-/>
-</div> */}
 
 
 <select name="" id="" onChange={handleClickToggle} value={isToggled ? "public" : "private"} style={{marginLeft:"28rem",
-    backgroundColor: "antiquewhite"}}>
+   backgroundColor:" darkslategray",
+   color: "burlywood"}}>
       
         <option value="public">Public</option>
         <option value="private">Private</option>
@@ -222,7 +179,7 @@ const Search = () => {
           </div>
 
           <div>
-          <Button as="input" type="submit" value="Post" />
+          <Button as="input" type="submit" value="Post" style={{backgroundColor:"darkslategray",color:"burlywood"}}/>
           {/* <button type="button" as="input"  value="Post" class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Share</button> */}
           </div>
         </div>

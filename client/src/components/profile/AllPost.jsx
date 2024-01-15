@@ -7,7 +7,7 @@ import './AllPost.css'
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import SendIcon from '@mui/icons-material/Send';
 import { successToast } from "../../Toastify/Toast";
-
+import {format} from 'timeago.js'
 const AllPost = ({ postid ,commentid}) => {
   const { obj } = useContext(AuthContext);
 
@@ -211,7 +211,7 @@ const {id}=useParams()
   }, [obj.refresh]);
   return (
     <div className="allpost">
-      <div style={{marginLeft:"5rem"}}>
+      <div style={{marginLeft:"9rem"}}>
         {details.map((items) => {
           console.log(items, "itemshenaaaaaaaaaaaaaaaaa");
 
@@ -232,7 +232,7 @@ const {id}=useParams()
                       className="text-gray-600"
                       style={{ display: "inline", color: "#666" }}
                     >
-                      Posted on {currentDateTime.toLocaleString()}
+                      {format(items.createdAt)}
                     </p>
                     {/* <input type="text" value={friend} onChange={handleFriendChange} /> */}
                   </div>
@@ -250,7 +250,7 @@ const {id}=useParams()
                       
                       <button
                         onClick={() => addFriend(items.userId)}
-                        style={{ marginLeft: "12rem" }}
+                        style={{ marginLeft: "21rem" }}
                       >
                         {" "}
                         <PersonAddIcon fontSize="default" color="primary" />

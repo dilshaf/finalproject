@@ -1,11 +1,11 @@
 .gradient-custom-2 {
-    /* fallback for old browsers */
+   
     background: #fbc2eb;
     
-    /* Chrome 10-25, Safari 5.1-6 */
+
     background: -webkit-linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1));
     
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
     background: linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1))
     }
 
@@ -140,12 +140,13 @@ $brown: #786450;
 
 .stats {
 	float: left;
+	color: bisque;
 	
 	.box {
 		box-sizing: border-box;
 		width: 120px;
 		height: 99px;
-		background: #F5E8DF;
+		background: darkslategray;
 		text-align: center;
 		padding-top: 28px;
 		transition: all .4s ease-in-out;
@@ -168,6 +169,7 @@ $brown: #786450;
 	.value {
 		font-size: 18px;
 		font-weight: 600;
+		color:"burlywood"
 	}
 	
 	.parameter {
@@ -205,4 +207,28 @@ $brown: #786450;
 	.center {
 	  margin-left:9rem
 	}
+  }
+
+
+@media screen and (min-width: 739px) and (max-width: 990px) {
+    .profiles {
+        margin-left: 27rem;
+    }
+}
+
+
+@media screen and (min-width: 419px) {
+   
+    .frnds {
+		margin-top: 8rem;
+		margin-left: 27rem 
+	
+    }
+  }
+
+  @media screen and (min-width: 419px) {
+   
+    .profiles {
+		margin-left: 31rem;
+    }
   }

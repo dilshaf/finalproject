@@ -1,29 +1,12 @@
+
 .div2{
     display: flex;
-    gap: 55px;
-    justify-content: space-between;
+
+    justify-content: space-around;
     
 }
 
 
-.dark-mode .div1 {
-    /* Add dark mode styles for div1 */
-  }
+
   
-  .dark-mode {
-    background-color:black;
-    color: #fff;
-    /* Add other dark mode styles */
-  }
-  @media (max-width: 990px) {
-    .flex {
-      margin-left: -1rem;
-    }
-    
-    }
-    @media (max-width: 546px) {
-      .flex {
-        margin-left: 10rem;
-      }
-      
-      }
+ 
