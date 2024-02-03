@@ -94,7 +94,7 @@ function Settings() {
       <div class="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"  style={{    marginTop: "5rem",
     marginLeft:" 18rem"}}>
         <div class="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-cyan-600 to-cyan-400 bg-clip-border text-white shadow-lg shadow-cyan-500/40">
-          <h3 class="block font-sans text-3xl font-semibold leading-snug tracking-normal text-white antialiased">
+          <h3 class="block font-sans text-3xl font-semibold leading-snug tracking-normal  antialiased">
             Update Your Profile
           </h3>
         </div>

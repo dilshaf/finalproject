@@ -230,7 +230,7 @@ const {id}=useParams()
                     <h2 className="text-lg font-semibold">{items.username}</h2>
                     <p
                       className="text-gray-600"
-                      style={{ display: "inline", color: "#666" }}
+                      style={{ display: "inline", color: "#666" ,marginLeft:"-1rem"}}
                     >
                       {format(items.createdAt)}
                     </p>

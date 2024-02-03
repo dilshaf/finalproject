@@ -10,7 +10,7 @@ import { WhatsappShareButton } from 'react-share';
 import { AuthContext } from '../../context/AuthContext';
 import {format} from 'timeago.js'
 
-const UserPost = ({refresh}) => {
+const UserPost = () => {
   const [showComments, setShowComments] = useState(false);
   
   const [data,setData]=useState([])
@@ -18,7 +18,7 @@ const UserPost = ({refresh}) => {
   const [commentText, setCommentText] = useState("");
   const [privacy, setPrivacy] = useState('public');
   const { refreshUseEffectMethod } = useContext(AuthContext)
-  // const [refresh, setRefresh] = useState(false);
+  const [refresh, setRefresh] = useState(false);
   // let postId={_id}
 
 
@@ -50,6 +50,7 @@ const UserPost = ({refresh}) => {
 console.log(data,"llllllllllllllllllllllllllllll");
   const toggleComments = () => {
     setShowComments(!showComments);
+    setRefresh(!refresh)
   };
 
   
@@ -93,7 +94,7 @@ console.log(data,"llllllllllllllllllllllllllllll");
   const fetchData = async()=>{
     const response = await getUserById()
     setDetails(response)
-    // setRefresh(!refresh);
+    setRefresh(!refresh);
     console.log(response,'responseeeeeeeeeee');
   }
 
@@ -157,7 +158,7 @@ console.log(data,"llllllllllllllllllllllllllllll");
           
           <div>
             <h2 className="text-lg font-semibold">{details.username}</h2>
-            <p className="text-gray-600">{format(details.createdAt)}</p>
+            <p className="text-gray-600" style={{    marginLeft: "-1rem"}}>{format(details.createdAt)}</p>
           </div>
           
 
@@ -172,7 +173,7 @@ console.log(data,"llllllllllllllllllllllllllllll");
         value={privacy}
         onChange={handlePrivacyChange}
         onClick={()=>handleUpdatePost(items._id)}
-        style={{marginLeft: "20rem",
+        style={{marginLeft:" 13rem",
           backgroundColor: "darkslategray",color:"burlywood"}}
       >
         <option value="public">Public</option>

@@ -28,7 +28,7 @@ useEffect(() => {
                 <>
                <article class="leaderboard">
 
-  <main class="leaderboard__profiles">
+  {/* <main class="leaderboard__profiles"> */}
     <article class="leaderboard__profile">
     <Avatar
       alt="Mark Zuckerberg"
@@ -44,7 +44,7 @@ useEffect(() => {
     
     
  
-  </main>
+  {/* </main> */}
 </article>
 
 

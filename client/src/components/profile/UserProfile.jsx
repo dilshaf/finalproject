@@ -86,7 +86,7 @@ console.log(data,'postlength');
       alt="Mark Zuckerberg"
       style={{marginLeft:"1rem"}}
       src={`http://localhost:5000/uploads/${data.profilepic || data.image}`}
-      className="leaderboard__picture"
+      className="__picture"
     />
 			</div>
 			

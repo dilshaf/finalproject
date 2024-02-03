@@ -8,7 +8,11 @@ const Share = () => {
 
   return (
     <div className="share-container" style={{
-    textAlign:"center",backgroundColor: "#0077cc", height: "100vh"}}>
+    textAlign:"center", height: "100vh",
+    
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"}}>
     <div className="share-box" style={{display:"flex",gap:"10rem"}}>
       <FacebookShareButton url={shareUrl} >
         <FaFacebook size={32} color="#3b5998" />
